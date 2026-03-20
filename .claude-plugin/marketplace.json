@@ -1,0 +1,15 @@
+{
+  "name": "arkitektum-marketplace",
+  "owner": {
+    "name": "Arkitektum"
+  },
+  "description": "Arkitektum Claude Code Marketplace",
+  "plugins": [
+    {
+      "name": "arkitektum-mandatory",
+      "source": "./plugins/arkitektum-mandatory",
+      "description": "Mandatory plugins for all Arkitektum projects",
+      "version": "1.0.0"
+    }
+  ]
+}
