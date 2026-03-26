@@ -25,6 +25,9 @@ If you need output from any of these tools, ask the user to run the command and 
 ## Git Operations
 
 - Never run `git push`, `git push --force`, or any variant. Let the user handle all push operations.
+- Never run `git clean` -- the working directory may contain untracked files from other work in progress.
+- Never run broad `git checkout .` or `git checkout -- .` to revert changes. Instead, revert surgically per file (e.g., `git checkout -- path/to/file1 path/to/file2` or `rm path/to/file1 path/to/file2`). The user may have other uncommitted changes you are not aware of.
+- When the user says "revert", they mean undo the changes you made to files -- do this by re-editing the files back to their previous content. If the changes are too substantial to confidently re-edit by hand, confirm the approach with the user first. Do not use git commands to revert unless the user explicitly asks for it.
 
 ## Data Handling
 
