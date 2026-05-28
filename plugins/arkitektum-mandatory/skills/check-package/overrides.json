@@ -1,0 +1,6 @@
+{
+  "pypi": {
+    "jinja2": "BSD-3-Clause",
+    "itsdangerous": "BSD-3-Clause"
+  }
+}

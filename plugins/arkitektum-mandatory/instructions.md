@@ -7,11 +7,30 @@ Always prefer large, well-maintained, and official packages and libraries in all
 - Widely adopted with active maintenance and regular releases
 - Well-documented with strong community support
 
-If no official package exists for a given need, or you want to suggest a third-party alternative, always ask the user to confirm before adding it as a dependency.
+## Adding Third-Party Dependencies
 
-## Dependency Licenses
+**MANDATORY: never add a third-party package to a project without explicit user confirmation.** This applies to every ecosystem (pip/uv, npm, cargo, NuGet, go) and every manifest (`pyproject.toml`, `package.json`, `Cargo.toml`, `*.csproj`, `go.mod`).
 
-When adding new dependencies, check and report the license. Flag dependencies with AGPL, NonCommercial (e.g., CC BY-NC), or missing/unknown licenses -- these can be problematic. Point out GPL dependencies as they have copyleft implications, but they are acceptable. Prefer dependencies with permissive licenses (MIT, Apache 2.0, BSD).
+Before asking the user, run the `check-package` skill to fetch the current version and license. Do not pin a version from memory. Examples:
+
+- `check-package pypi requests`
+- `check-package npm @tanstack/react-query`
+- `check-package cargo serde`
+- `check-package nuget Newtonsoft.Json`
+- `check-package go github.com/gorilla/mux`
+
+Then present the package, version, and license to the user and wait for confirmation.
+
+License policy:
+
+- **Preferred (permissive)**: MIT, Apache-2.0, BSD-2-Clause, BSD-3-Clause, ISC, MPL-2.0.
+- **Acceptable, but mention the copyleft implication**: GPL-2.0, GPL-3.0, LGPL.
+- **DO NOT ADD**: any NonCommercial license (CC-BY-NC and variants). Hard no, propose an alternative.
+- **Strongly flag, require explicit override from the user**:
+  - AGPL (any version) -- network copyleft.
+  - BUSL (Business Source License) -- source-available, restricts commercial/competing use.
+  - Other source-available non-OSI licenses (SSPL, ELv2, etc.).
+- **`UNKNOWN` / missing license**: do not add. Ask the user to research the actual license status (check the project repository, `LICENSE` file, README, or homepage) and report back. In parallel, suggest one or two well-licensed alternatives that solve the same problem.
 
 ## Restricted Tools and Operations
 
