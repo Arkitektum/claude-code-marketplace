@@ -11,15 +11,15 @@ Always prefer large, well-maintained, and official packages and libraries in all
 
 **MANDATORY: never add a third-party package to a project without explicit user confirmation.** This applies to every ecosystem (pip/uv, npm, cargo, NuGet, go) and every manifest (`pyproject.toml`, `package.json`, `Cargo.toml`, `*.csproj`, `go.mod`).
 
-Before asking the user, run the `check-package` skill to fetch the current version and license. Do not pin a version from memory. Examples:
+Before asking the user, invoke the `check-package` skill to fetch the current version and license. This is a skill, invoke it through the Skill tool, do not run `check-package` as a shell/Bash command (there is no such executable). The argument string is `<ecosystem> <package>`, for example:
 
-- `check-package pypi requests`
-- `check-package npm @tanstack/react-query`
-- `check-package cargo serde`
-- `check-package nuget Newtonsoft.Json`
-- `check-package go github.com/gorilla/mux`
+- Skill `check-package` with args `pypi requests`
+- Skill `check-package` with args `npm @tanstack/react-query`
+- Skill `check-package` with args `cargo serde`
+- Skill `check-package` with args `nuget Newtonsoft.Json`
+- Skill `check-package` with args `go github.com/gorilla/mux`
 
-Then present the package, version, and license to the user and wait for confirmation.
+Do not use a version from memory. Then present the package, version, and license to the user and wait for confirmation.
 
 License policy:
 
