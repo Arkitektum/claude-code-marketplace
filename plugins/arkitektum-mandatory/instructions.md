@@ -53,6 +53,17 @@ If you need output from any of these tools, ask the user to run the command and 
 - Never include real or production data, PII, or customer data in code, tests, comments, or log statements.
 - Use synthetic or mock data for examples and tests.
 
+## Personal data (personopplysninger / PII) in app development
+
+Data minimisation is the default, and **the developer, not you (the agent), decides what personal data an app stores.** Never add a PII field on your own judgement.
+
+- **Never auto-scaffold a `User`/`Person`/profile model with assumed PII fields.** When a data model is involved, propose the candidate fields and justify each by the feature that uses it; **the developer must explicitly approve every personal-data field before you write it.** No approval, no field. Store the minimum the feature needs, nothing "because a user usually has it."
+- **Don't copy full PII shapes from an external schema or API response into your own store.** Map only the fields the developer has approved.
+
+Hard rules, no need to ask:
+- Use synthetic/mock PII in code, tests, comments, and fixtures.
+- Personal data must never reach logs, telemetry, error messages, or crash reports under any circumstances, at any level, including debug and temporary troubleshooting. This covers direct identifiers (fødselsnummer, etc.) and any other personal data, including objects or request/response bodies that contain it. Before logging anything that may carry PII, redact or replace it with an identifier you control (row id, correlation id). PII in logs is a defect to be fixed, not a trade-off to be weighed.
+
 ## Security
 
 - Do not use direct API calls (`curl`, `wget`, `fetch`, or SDK clients) to GitHub or Azure APIs as a workaround for CLI restrictions.
