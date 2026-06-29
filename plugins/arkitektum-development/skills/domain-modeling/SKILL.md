@@ -9,11 +9,29 @@ Actively build and sharpen the project's domain model as you design. This is the
 
 ## Where docs live
 
-Read the `arkitektum-development:domain-docs` block in `CLAUDE.md` (or `AGENTS.md`) and
-use the glossary and decisions locations recorded there. The block also names the
-decisions system: standard `docs/adr/` markdown, or an alternative the project already
-uses (for example Backlog.md). If there is no block, use the defaults below and suggest
-running `/setup-domain-docs`.
+Read `CLAUDE.md` (or `AGENTS.md`) and use the glossary and decisions locations it names.
+The instructions also indicate the decisions system: standard `docs/adr/` markdown, or an
+alternative the project already uses (for example Backlog.md).
+
+If the instructions say nothing about domain docs, stop and let the user decide, do not
+silently default. Explain briefly, in two parts:
+
+- Why it matters: the glossary (`CONTEXT.md`) is the project's shared vocabulary and the
+  decision records capture why hard-to-reverse choices were made; for these to pay off,
+  the repo's agent instructions must point future sessions at them, otherwise anything
+  written here is never read back.
+- What setup does: `/setup-domain-docs` asks where the glossary and decisions should live
+  (detecting any system already in use, `docs/adr/`, Backlog.md, or other) and adds a
+  short "Domain docs" section to `CLAUDE.md`/`AGENTS.md` so future sessions read them. It
+  takes a moment and writes nothing without your confirmation.
+
+Then offer the choice:
+
+- Run `/setup-domain-docs` now (recommended).
+- Proceed for this session with the defaults below (`CONTEXT.md` + `docs/adr/`), accepting
+  that future sessions will not be told to read them.
+
+Wait for the user's answer before writing anything.
 
 ## File structure
 
@@ -81,7 +99,7 @@ Only offer to create an ADR when all three are true:
 
 If any of the three is missing, skip the ADR.
 
-Record the decision in the system named in the domain-docs block. For `docs/adr/`, use
+Record the decision in the system named in the instructions. For `docs/adr/`, use
 the format in [ADR-FORMAT.md](./ADR-FORMAT.md). For an alternative system (for example
 Backlog.md), create the decision in that system following its own conventions and keep
 the content to the same essentials: what was decided and why.

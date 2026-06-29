@@ -23,8 +23,8 @@ prompts (for example "stress-test this plan") without an explicit slash command.
 ## How the pieces fit
 
 `/arkitektum-development:grill-with-docs` runs `grilling` and `domain-modeling`. Before
-writing anything it checks the repo's `CLAUDE.md` (or `AGENTS.md`) for an
-`arkitektum-development:domain-docs` block; if it is missing it offers to run
+writing anything it reads the repo's `CLAUDE.md` (or `AGENTS.md`) and judges whether it
+already says where the glossary and decisions live; if not, it offers to run
 `/arkitektum-development:setup-domain-docs` first. That setup skill records where the
 glossary and decisions live, supporting standard `docs/adr/` markdown or an alternative the
 project already uses such as Backlog.md.

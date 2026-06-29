@@ -8,9 +8,9 @@ description: Configure this repo so domain docs (a glossary and decision records
 Wire this repo so the glossary and decisions that `/grill-with-docs` and `/domain-modeling`
 produce are both written to the right place and read back automatically in later sessions.
 
-The mechanism is a small, marker-delimited block in the repo's agent instructions
-(`CLAUDE.md` or `AGENTS.md`). The block tells every future session to read the glossary
-and decisions before working, and records where those live. Without it, the docs are
+The mechanism is a short "Domain docs" section in the repo's agent instructions
+(`CLAUDE.md` or `AGENTS.md`). It tells every future session to read the glossary and
+decisions before working, and records where those live. Without it, the docs are
 write-only.
 
 This is a prompt-driven skill, not a script. Explore, present what you found, confirm with
@@ -20,8 +20,8 @@ the user, then write.
 
 Read the repo to learn its starting state. Do not assume:
 
-- `CLAUDE.md` and `AGENTS.md` at the root. Which exists? Does either already contain an
-  `arkitektum-development:domain-docs` block?
+- `CLAUDE.md` and `AGENTS.md` at the root. Which exists? Does either already describe
+  where the glossary and decisions live (a domain-docs habit, under any heading)?
 - `CONTEXT.md` and `CONTEXT-MAP.md` at the root (existing glossary, single- or multi-context).
 - Decision systems already in use:
   - `docs/adr/` (standard markdown ADRs)
@@ -56,27 +56,31 @@ Pick the file to edit:
 - If neither exists, ask the user which to create. Do not pick for them. Never create one
   when the other already exists.
 
-If an `arkitektum-development:domain-docs` block already exists, update it in place rather
+If the file already describes where domain docs live, update that section in place rather
 than appending a duplicate. Do not touch the surrounding content.
 
-The block (fill the locations from the answers):
+The section (fill the locations from the answers):
 
 ```markdown
-<!-- arkitektum-development:domain-docs:start -->
 ## Domain docs
 
-Before working, read these for the project's vocabulary and prior decisions:
+Before working, read these for the project's vocabulary and prior decisions, and keep your
+own naming consistent with the glossary:
 
 - Glossary: `CONTEXT.md`
 - Decisions: `docs/adr/`
 
-Keep naming consistent with the glossary. Record a decision only when it is hard to
-reverse, surprising without context, and the result of a real trade-off.
-<!-- arkitektum-development:domain-docs:end -->
+If your work would contradict a recorded decision, surface that rather than silently
+overriding it. New glossary terms and decision records are created by `/grill-with-docs`
+(and the `domain-modeling` skill it uses), which own the format and numbering; do not
+hand-roll your own.
 ```
+
+This section is for *consuming* the docs. Authoring, the ADR format, numbering, and when a
+decision is worth recording, lives in the `domain-modeling` skill, not here.
 
 ## 4. Done
 
 Tell the user setup is complete and that `/grill-with-docs` and `/domain-modeling` will now
-read and write the locations recorded in the block. Mention they can edit the block
-directly later; re-run this skill only to change where docs live.
+read and write the locations recorded in this section. Mention they can edit it directly
+later; re-run this skill only to change where docs live.
