@@ -1,7 +1,6 @@
 ---
 name: setup-domain-docs
-description: Configure this repo so domain docs (a glossary and decision records) written by grill-with-docs are read back in future sessions. Detects existing decision/ADR systems (docs/adr, Backlog.md, or other) and records where docs live. Run once per repo.
-disable-model-invocation: true
+description: Configure this repo so domain docs (a glossary and decision records) written by grill-with-docs are read back in future sessions. Detects existing decision/ADR systems (docs/adr, Backlog.md, or other) and records where docs live. Run once per repo, or when grill-with-docs hands off to it.
 ---
 
 # Set up domain docs

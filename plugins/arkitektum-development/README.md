@@ -13,7 +13,7 @@ skills added later may ship under different terms.
 |------------------------------------------|--------------|---------------------------------------------------------------------|----------------|-------------------|
 | `/arkitektum-development:grill-me`          | slash only   | Relentless interview to sharpen a plan or design                    | MIT            | mattpocock/skills |
 | `/arkitektum-development:grill-with-docs`   | slash only   | `grill-me` plus a glossary and decision records written as you go   | MIT (modified) | mattpocock/skills |
-| `/arkitektum-development:setup-domain-docs` | slash only   | Wire a repo so domain docs are read back; record where they live    | MIT            | Arkitektum        |
+| `/arkitektum-development:setup-domain-docs` | model/slash  | Wire a repo so domain docs are read back; record where they live    | MIT            | Arkitektum        |
 | `grilling`                               | model/slash  | The interview engine used by the grill skills                       | MIT            | mattpocock/skills |
 | `domain-modeling`                        | model/slash  | Build and maintain the glossary and decision records                | MIT (modified) | mattpocock/skills |
 
