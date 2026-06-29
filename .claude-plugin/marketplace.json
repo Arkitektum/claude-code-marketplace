@@ -9,6 +9,16 @@
       "name": "arkitektum-mandatory",
       "source": "./plugins/arkitektum-mandatory",
       "description": "Mandatory plugins for all Arkitektum projects"
+    },
+    {
+      "name": "arkitektum-security",
+      "source": "./plugins/arkitektum-security",
+      "description": "Security skills for identifying, assessing, and remediating security risks"
+    },
+    {
+      "name": "arkitektum-development",
+      "source": "./plugins/arkitektum-development",
+      "description": "Development workflow skills for sharpening plans and maintaining a project's domain model"
     }
   ]
 }
