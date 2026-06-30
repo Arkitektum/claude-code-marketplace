@@ -89,7 +89,8 @@ takes over the victim's accounts.
 
 ## Detection guidance
 
-* Test login endpoints for resistance to automated credential stuffing and brute force attacks.
+* Review authentication controls for protections against credential stuffing and brute force,
+  such as rate limiting, account lockout, and MFA.
 * Verify that default credentials are not present on any deployed component.
 * Inspect password storage implementations for use of strong adaptive hashing algorithms.
 * Confirm that MFA is enforced on all administrative and high-privilege accounts.

@@ -105,8 +105,8 @@ or target high-value clients.
 * Monitor model outputs for PII, proprietary code, or confidential business data in
   responses.
 * Review access control logs for unauthorized data access patterns through the LLM.
-* Test model responses with targeted queries designed to elicit sensitive information such
-  as training data extraction or membership inference attacks.
+* Review what data the model can access and return to confirm sensitive information cannot be
+  disclosed through its responses (training data extraction, membership inference).
 * Inspect the LLM's infrastructure configuration for adequate network segmentation and
   encryption.
 

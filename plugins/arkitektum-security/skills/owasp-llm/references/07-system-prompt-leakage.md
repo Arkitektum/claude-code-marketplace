@@ -86,8 +86,8 @@ attack to bypass these instructions, facilitating a remote code execution attack
 
 ## Detection guidance
 
-* Test whether system prompt content can be extracted through direct queries or prompt
-  injection techniques designed to elicit system instructions.
+* Review whether the design relies on system prompt secrecy, treating any prompt content as
+  potentially exposable rather than confidential.
 * Review system prompts for embedded sensitive data such as credentials, API keys, or
   connection strings.
 * Observe model behavior patterns to determine if guardrails and formatting restrictions

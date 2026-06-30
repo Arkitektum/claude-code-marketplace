@@ -100,7 +100,7 @@ infrastructure.
 * Verify that all CI/CD systems have audit and applicative logging enabled and configured.
 * Confirm that logs from all CI/CD systems are being shipped to and received by the centralized
   SIEM.
-* Test alert rules by simulating anomalous activities across CI/CD systems.
+* Review alert rules to confirm they cover anomalous activities across CI/CD systems.
 * Periodically review log coverage to identify CI/CD systems or event types that are not being
   captured.
 * Validate that programmatic access events (API calls, token usage, webhook invocations) are

@@ -96,8 +96,8 @@ usefulness.
 * Validate knowledge base integrity for hidden codes, injected content, and poisoned data.
 * Review combined datasets for proper tagging and classification of access levels.
 * Monitor retrieval activity logs for suspicious patterns or unauthorized access attempts.
-* Test for cross-tenant data leakage by querying from different user contexts and verifying
-  isolation.
+* Review tenant isolation in the vector store and retrieval layer to confirm one tenant's
+  queries cannot return another tenant's data.
 * Evaluate model behavior after retrieval augmentation for unintended changes such as reduced
   empathy or altered response characteristics.
 

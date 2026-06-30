@@ -64,7 +64,7 @@ documents, templates, or external data sources.
 5. Sanitize and validate any connected data source including RAG inputs, emails, calendar invites,
    uploaded files, external APIs, browsing output, and peer-agent messages using content filtering
    before the data can influence agent goals or actions.
-6. Conduct periodic red-team tests simulating goal override and verify rollback effectiveness.
+6. Review and validate that rollback mechanisms recover the agent from goal-override scenarios.
 7. Incorporate AI agents into the established insider threat program to monitor prompts intended
    to access sensitive data or alter agent behavior.
 
@@ -99,8 +99,8 @@ convinces the user to make an ill-advised business decision.
   behavioral baseline that includes goal state, tool-use patterns, and invariant properties.
 * Track a stable identifier for the active goal and alert on deviations such as unexpected goal
   changes, anomalous tool sequences, or shifts from the established baseline.
-* Conduct periodic red-team tests simulating goal override scenarios to verify detection and
-  rollback effectiveness.
+* Review detection and rollback coverage for goal-override scenarios to confirm they would be
+  caught and recovered.
 * Monitor for insider prompts intended to access sensitive data or alter agent behavior through
   the established insider threat program.
 

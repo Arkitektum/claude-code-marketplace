@@ -67,8 +67,7 @@ model's serialized format is used to distribute and execute harmful code on load
    datasets.
 5. Apply input validation, curated datasets, and sandboxing to filter out potentially harmful
    data during pre-training, fine-tuning, and RAG retrieval.
-6. Regularly evaluate model outputs through red teaming exercises and adversarial testing to
-   identify signs of poisoning. Use automated monitoring to detect unusual or harmful outputs
+6. Regularly review model outputs for signs of poisoning. Use automated monitoring to detect unusual or harmful outputs
    in real-time.
 7. Conduct regular bias and fairness audits on model outputs to ensure poisoned data has not
    introduced or reinforced undesirable biases.
@@ -118,8 +117,8 @@ retrieved and used to generate a harmful or misleading response.
 
 * Use statistical methods and anomaly detection tools to identify unusual patterns or outliers
   in training data that may indicate poisoning.
-* Evaluate model outputs through red teaming exercises for signs of poisoning such as biased,
-  factually incorrect, or unexpected responses.
+* Review model outputs for signs of poisoning such as biased, factually incorrect, or
+  unexpected responses.
 * Conduct regular bias and fairness audits on model outputs to detect changes introduced by
   poisoned data.
 * Monitor changes in data files and model artifacts using version control with cryptographic

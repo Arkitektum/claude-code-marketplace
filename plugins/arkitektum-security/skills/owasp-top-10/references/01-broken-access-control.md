@@ -103,8 +103,10 @@ The server returns the admin page because it does not enforce server-side access
 ## Detection guidance
 
 * Review application code for consistent enforcement of access control checks on all endpoints.
-* Test for insecure direct object references by substituting resource identifiers in requests.
-* Verify that forced browsing to authenticated or privileged pages fails for unauthorized users.
+* Review code paths that fetch resources by identifier to confirm server-side ownership checks
+  are applied (insecure direct object references).
+* Confirm access control is enforced in server-side code for all authenticated and privileged
+  routes, not only in client-side logic.
 * Inspect CORS configuration for overly permissive origin policies.
 * Check for the presence of file metadata, backup files, and source control directories in
   web-accessible paths.
@@ -117,7 +119,6 @@ The server returns the admin page because it does not enforce server-side access
 * Restrict CORS policies to trusted origins only.
 * Add access control failure logging with alerting for repeated violations.
 * Invalidate sessions on logout and enforce session timeout policies.
-* Conduct access control penetration testing and remediate all identified bypasses.
 
 ---
 

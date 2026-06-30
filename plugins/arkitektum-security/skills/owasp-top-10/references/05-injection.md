@@ -102,8 +102,6 @@ An attacker supplies `example.com; cat /etc/passwd` to execute arbitrary command
 
 * Review source code for dynamic query construction that concatenates user input.
 * Run automated SAST scans to identify injection-prone code patterns.
-* Execute DAST scans against all application endpoints with injection payloads.
-* Fuzz all parameters, headers, URLs, cookies, and data inputs for injection responses.
 * Inspect parameterized query usage to verify that parameters are not bypassed through
   concatenation.
 * Monitor application logs for SQL errors, command execution failures, or unexpected query
@@ -117,7 +115,8 @@ An attacker supplies `example.com; cat /etc/passwd` to execute arbitrary command
 * Remove or replace any code that concatenates user input into interpreter commands.
 * Deploy WAF rules to block common injection patterns as an interim measure while code is
   remediated.
-* Re-test all remediated endpoints with injection payloads to confirm the fix.
+* Review remediated code paths to confirm parameterized queries or safe APIs are used
+  consistently.
 
 ---
 

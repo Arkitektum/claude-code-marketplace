@@ -57,8 +57,8 @@ extensions can also introduce their own vulnerabilities.
 2. Apply vulnerability scanning, management, and patching of components following OWASP
    A06:2021 guidance. For development environments with access to sensitive data, apply these
    controls in those environments as well.
-3. Apply comprehensive AI red teaming on supplied models to verify they have been evaluated
-   and checked for vulnerabilities.
+3. Verify that supplied models have been independently evaluated and documented as checked for
+   known vulnerabilities before adoption.
 4. Maintain an up-to-date inventory of components using a Software Bill of Materials (SBOM)
    to ensure an accurate and signed inventory, preventing tampering with deployed packages.
 5. Use MLOps best practices and platforms offering secure model repositories with data, model,
@@ -131,7 +131,8 @@ memorization of sensitive data.
 * Update the Software Bill of Materials to include all current components with supply chain
   security analysis.
 * Implement a patching policy for all vulnerable or outdated components.
-* Apply AI red teaming to all supplied models to identify and remediate vulnerabilities.
+* Review supplier evaluation evidence and model documentation to confirm vulnerabilities have
+  been assessed.
 * Renegotiate or discontinue use of suppliers with unclear terms and conditions or inadequate
   privacy policies.
 
