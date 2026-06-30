@@ -68,7 +68,8 @@ transactions, and issues with memory, state, resource, timing, authentication, a
    consistently.
 9. Perform strict input validation with sanitization to prevent exceptional conditions from
    reaching internal functions.
-10. Execute stress, performance, and penetration testing to identify error handling weaknesses.
+10. Include tests for failure and exception paths in the test suite, covering resource
+    exhaustion and partial-failure conditions.
 
 ## Example attack scenarios
 
@@ -96,11 +97,11 @@ partial state to drain the user account or trigger duplicate credits.
 ## Detection guidance
 
 * Review application code for exception handling coverage and consistency across all modules.
-* Test error responses to verify that no sensitive system information is exposed to users.
+* Review error responses to confirm no sensitive system information is exposed to users.
 * Monitor application logs for patterns of repeated exceptions indicating ongoing attack
   attempts.
 * Verify that all multi-step transactions implement complete rollback on failure.
-* Load test the application to identify resource leaks under sustained exception conditions.
+* Review resource cleanup in exception paths to confirm resources are released on failure.
 * Check that a global exception handler is in place and functioning as a safety net.
 
 ## Remediation

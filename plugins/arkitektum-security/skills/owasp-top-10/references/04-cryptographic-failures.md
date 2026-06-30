@@ -85,13 +85,14 @@ hashes are cracked by GPU.
 
 ## Detection guidance
 
-* Scan all endpoints for TLS configuration strength and protocol version support.
+* Review TLS configuration for cipher strength and supported protocol versions.
 * Verify that HSTS headers are present and correctly configured on all responses.
 * Audit password storage implementations for use of appropriate adaptive hashing algorithms.
 * Search source code repositories for committed cryptographic keys or secrets.
 * Review cryptographic algorithm and mode selections in application code for deprecated or
   weak choices.
-* Test for padding oracle and other side-channel vulnerabilities in cryptographic operations.
+* Review cryptographic operations in code for patterns prone to padding oracle and other
+  side-channel weaknesses.
 
 ## Remediation
 

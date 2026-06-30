@@ -90,4 +90,4 @@ pivot point into the internal network for additional attacks.
 * Create and enforce an access matrix governing inter-segment communication.
 * Implement dynamic application-layer filtering at network boundaries.
 * Secure all remote access channels with VPN or equivalent encrypted tunneling.
-* Conduct regular network topology reviews and penetration tests.
+* Conduct regular network topology reviews.

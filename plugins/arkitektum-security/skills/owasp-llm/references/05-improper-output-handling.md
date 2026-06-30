@@ -121,8 +121,8 @@ software packages, potentially leading developers to download malware-infected r
 
 * Review code for direct use of LLM output in system commands, SQL queries, or file path
   construction.
-* Test for XSS by examining LLM-generated content rendered in browsers for unescaped
-  JavaScript or Markdown.
+* Review how LLM-generated content is rendered to confirm it is escaped or sanitized before
+  display, preventing XSS via unescaped JavaScript or Markdown.
 * Inspect Content Security Policies for adequacy against LLM-generated content injection.
 * Monitor logging systems for unusual patterns in LLM outputs indicating exploitation
   attempts.

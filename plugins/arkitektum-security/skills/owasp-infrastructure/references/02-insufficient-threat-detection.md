@@ -79,7 +79,8 @@ The exfiltrated data and files are later sold to competitors.
 
 * Monitor for gaps in logging coverage across the infrastructure.
 * Validate that detection sensors cover endpoints, servers, and network segments.
-* Test detection capabilities with simulated attack exercises and red team engagements.
+* Review detection use cases against known attack techniques (for example MITRE ATT&CK) to
+  confirm expected activity would generate alerts.
 * Review alert volumes and false positive rates to confirm detection fidelity.
 
 ## Remediation

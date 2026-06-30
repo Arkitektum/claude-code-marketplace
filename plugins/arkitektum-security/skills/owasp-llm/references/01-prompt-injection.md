@@ -142,8 +142,8 @@ whatever way the attacker desires.
   the LLM.
 * Log and analyze all interactions for unusual patterns such as attempts to override system
   instructions or extract sensitive information.
-* Test for prompt injection by submitting known injection payloads and evaluating model
-  responses.
+* Review input handling and the separation between system instructions and user or untrusted
+  content for susceptibility to prompt injection.
 
 ## Remediation
 

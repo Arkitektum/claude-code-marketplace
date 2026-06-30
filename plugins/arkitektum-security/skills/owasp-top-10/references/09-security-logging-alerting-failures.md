@@ -92,7 +92,7 @@ not detect the attack.
 
 * Verify that all auditable events generate log entries with sufficient context.
 * Confirm that log integrity is protected through append-only storage or similar controls.
-* Test whether DAST scans and penetration testing activities trigger alerts.
+* Review alerting coverage to confirm that scanning and intrusion attempts would generate alerts.
 * Review alerting rules for appropriate thresholds and confirm that alerts are received and
   reviewed within a defined time window.
 * Check that logs are forwarded to centralized log management and backed up.

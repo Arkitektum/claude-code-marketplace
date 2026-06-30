@@ -65,7 +65,7 @@ memory can alter goal interpretation, reasoning path, or tool-selection logic.
    retention by data sensitivity.
 5. Prevent automatic re-ingestion of an agent's own generated outputs into trusted memory to
    avoid self-reinforcing contamination.
-6. Perform adversarial tests, use snapshots and rollback and version control, and require human
+6. Use snapshots, rollback, and version control, and require human
    review for high-risk actions. Use per-tenant namespaces and trust scores for entries, decaying
    or expiring unverified memory over time.
 

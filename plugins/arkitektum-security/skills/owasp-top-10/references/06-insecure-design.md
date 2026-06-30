@@ -88,7 +88,7 @@ Legitimate customers cannot purchase the products at listed prices.
 * Review the application design documentation for the presence of threat models and secure
   design artifacts.
 * Verify that security requirements are documented in user stories and business requirements.
-* Test business logic flows for abuse scenarios including bulk operations, rate limits, and
+* Review business logic flows for abuse scenarios including bulk operations, rate limits, and
   state manipulation.
 * Inspect tenant segregation at all tiers to confirm that cross-tenant access is not possible.
 * Check credential recovery mechanisms for reliance on knowledge-based questions or other

@@ -98,8 +98,8 @@ manually review and approve every mail send action.
   levels.
 * Monitor and log LLM extension activity and downstream system interactions for undesirable
   or unauthorized actions.
-* Test whether high-impact actions can be triggered without human approval or user
-  confirmation.
+* Review high-impact actions to confirm they require human approval or explicit user
+  confirmation before execution.
 * Verify that extensions execute in the specific user's security context with minimum
   privileges rather than using generic high-privileged identities.
 
