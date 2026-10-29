@@ -29,15 +29,45 @@ Mandatory plugin applied to all Arkitektum projects. It does two things:
 
 2. **IDE config protection** -- PreToolUse hooks that block Claude from modifying IDE configuration directories (`.vscode/`, `.idea/`, `.vs/`), preventing potential security issues from malicious auto-run configs.
 
+### arkitektum-security
+
+OWASP knowledge bases (web, LLM, MCP, agentic, CI/CD, infrastructure) for reviewing and remediating security risks. See [its README](plugins/arkitektum-security/README.md).
+
+### mattpocock-skills
+
+Selected skills from [mattpocock/skills](https://github.com/mattpocock/skills) (MIT): `grill-me`, `grilling`, `grill-with-docs`, `domain-modeling`, `setup-matt-pocock-skills`, `handoff`, `teach`, `wait-what` and `writing-for-agents`.
+
+The entry has no files in this repository. It fetches the upstream `skills/` directory and loads only the skills listed under `skills` in `marketplace.json`, so upstream hooks, MCP servers and unlisted skills don't come along. It has no `ref` and no `version`, so it tracks upstream `main` and every upstream commit is a new version.
+
+- **Adding a skill**: add its path under `skills`, plus any skill it refers to.
+- **When upstream renames or removes a listed skill**: `/plugin` reports `Path not found` for that path. Update or remove the path.
+- **Replaces `arkitektum-development`**: the `renames` entry moves `enabledPlugins` over. Outside claude-docker, run `/plugin install mattpocock-skills@arkitektum-marketplace` once, because Claude Code doesn't download a renamed plugin by itself.
+- **Domain docs**: upstream writes the glossary to `GLOSSARY.md`, while the old `setup-domain-docs` pointed at `CONTEXT.md`. In a repo set up with the old skill, run `/mattpocock-skills:setup-matt-pocock-skills` once. It offers to rename the file.
+
 ## Usage
 
-To install a plugin from this marketplace in a project, add a reference in the project's `.claude/settings.json`:
+[claude-docker](https://github.com/Arkitektum/claude-docker) installs `arkitektum-mandatory` and `mattpocock-skills` and turns on auto-update for this marketplace. Outside it, add the marketplace and install from a Claude Code session:
+
+```
+/plugin marketplace add Arkitektum/claude-code-marketplace
+/plugin install arkitektum-mandatory@arkitektum-marketplace
+```
+
+Then turn on auto-update under `/plugin` → **Marketplaces** → `arkitektum-marketplace` → **Enable auto-update**. Third-party marketplaces have it off by default.
+
+To declare the marketplace and its plugins for everyone in a repository, commit this to the repository's `.claude/settings.json`:
 
 ```json
 {
-  "plugins": [
-    "https://raw.githubusercontent.com/<org>/claude-code-marketplace/main/plugins/arkitektum-mandatory"
-  ]
+  "extraKnownMarketplaces": {
+    "arkitektum-marketplace": {
+      "source": { "source": "github", "repo": "Arkitektum/claude-code-marketplace" },
+      "autoUpdate": true
+    }
+  },
+  "enabledPlugins": {
+    "arkitektum-mandatory@arkitektum-marketplace": true
+  }
 }
 ```
 
@@ -48,9 +78,9 @@ To install a plugin from this marketplace in a project, add a reference in the p
    ```json
    {
      "name": "my-plugin",
-     "version": "1.0.0",
      "description": "What this plugin does"
    }
    ```
+   Leave out `version`. Claude Code then versions the plugin by commit SHA, so every merge reaches users. A `version` keeps users on their copy until someone changes it.
 3. Add hooks, scripts, and instructions as needed (see `arkitektum-mandatory` for reference)
 4. Register the plugin in `.claude-plugin/marketplace.json`

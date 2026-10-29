@@ -16,9 +16,29 @@
       "description": "Security skills for identifying, assessing, and remediating security risks"
     },
     {
-      "name": "arkitektum-development",
-      "source": "./plugins/arkitektum-development",
-      "description": "Development workflow skills for sharpening plans and maintaining a project's domain model"
+      "name": "mattpocock-skills",
+      "source": {
+        "source": "git-subdir",
+        "url": "mattpocock/skills",
+        "path": "skills"
+      },
+      "skills": [
+        "./productivity/grill-me",
+        "./productivity/grilling",
+        "./engineering/grill-with-docs",
+        "./engineering/domain-modeling",
+        "./engineering/setup-matt-pocock-skills",
+        "./productivity/handoff",
+        "./productivity/teach",
+        "./productivity/wait-what",
+        "./productivity/writing-for-agents"
+      ],
+      "description": "Selected skills from mattpocock/skills, tracking its main branch",
+      "homepage": "https://github.com/mattpocock/skills",
+      "license": "MIT"
     }
-  ]
+  ],
+  "renames": {
+    "arkitektum-development": "mattpocock-skills"
+  }
 }
