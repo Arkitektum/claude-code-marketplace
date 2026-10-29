@@ -19,7 +19,7 @@
       "name": "mattpocock-skills",
       "source": {
         "source": "git-subdir",
-        "url": "mattpocock/skills",
+        "url": "https://github.com/mattpocock/skills.git",
         "path": "skills"
       },
       "skills": [
