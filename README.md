@@ -2,6 +2,10 @@
 
 A collection of Claude Code plugins and skills maintained by Arkitektum. Plugins in this marketplace enforce organizational standards, security policies, and development conventions across all projects.
 
+## Workflow
+
+[docs/arbeidsflyt.md](docs/arbeidsflyt.md) (Norwegian) describes how we work with Claude Code: which skills and hooks are used at each stage, the conventions they rely on, and how they are rolled out. Status: proposal.
+
 ## Structure
 
 ```
