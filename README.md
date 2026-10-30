@@ -39,6 +39,7 @@ Selected skills from [mattpocock/skills](https://github.com/mattpocock/skills) (
 
 The entry has no files in this repository. It fetches the upstream `skills/` directory and loads only the skills listed under `skills` in `marketplace.json`, so upstream hooks, MCP servers and unlisted skills don't come along. It has no `ref` and no `version`, so it tracks upstream `main` and every upstream commit is a new version.
 
+- **Source URL**: keep the full `https://` URL. With the `owner/repo` shorthand, Claude Code clones over SSH first. The claude-docker firewall blocks SSH, and plugin updates don't fall back to HTTPS.
 - **Adding a skill**: add its path under `skills`, plus any skill it refers to.
 - **When upstream renames or removes a listed skill**: `/plugin` reports `Path not found` for that path. Update or remove the path.
 - **Replaces `arkitektum-development`**: the `renames` entry moves `enabledPlugins` over. Outside claude-docker, run `/plugin install mattpocock-skills@arkitektum-marketplace` once, because Claude Code doesn't download a renamed plugin by itself.
