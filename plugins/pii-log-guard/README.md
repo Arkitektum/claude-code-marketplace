@@ -19,6 +19,8 @@ These are always allowed:
 
 A recursive search over a folder that holds such files is also denied. Narrow it to a repository, or use `--include=*.cs` or a Grep `glob`/`type`.
 
+Writing is not blocked: the `Write` tool and output redirection (`>`, `>>`) work anywhere. Commands that take the file name as an argument (`touch`, `tee`, `cp`, a script's `--out`) are denied outside git repos, because the hook can't tell writing from reading. Keep synthetic test data you need to read back inside a git repository.
+
 **Tools** in `scripts/`. None of them modify the original file.
 
 | Script | For | Output |

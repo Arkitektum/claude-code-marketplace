@@ -68,6 +68,15 @@ t ALLOW Grep "$(jq -n --arg p "$W/ws" '{pattern:"x",path:$p,type:"cs"}')" "Grep 
 t ALLOW Grep "$(jq -n --arg p "$W/ws/repo" '{pattern:"x",path:$p}')" "Grep inside repo"
 t ALLOW Grep '{"pattern":"x"}' "Grep from repo cwd" "$W/ws/repo"
 
+echo "Writing test files (documents current behaviour):"
+t ALLOW Write "$(jq -n --arg p "$W/ws/new.csv" '{file_path:$p,content:"a;b"}')" "Write tool creates a data file"
+t ALLOW Bash "$(j command 'python3 gen.py 50 > new.xml')" "generator output redirected with >"
+t DENY Bash "$(j command 'touch new.csv')" "touch: file name looks like a read"
+t DENY Bash "$(j command 'python3 gen.py --out new.csv')" "script given the output path as an argument"
+t DENY Bash "$(j command 'cp export.csv copy.csv')" "cp reads the source"
+t DENY Read "$(j file_path "$W/ws/new.csv")" "reading the new file back"
+t ALLOW Bash "$(j command 'cat repo/data.json')" "data files inside a git repo are unrestricted"
+
 rm -f /tmp/redacted/hooktest-export.csv
 echo "pass=$pass fail=$fail"
 [ "$fail" -eq 0 ]
