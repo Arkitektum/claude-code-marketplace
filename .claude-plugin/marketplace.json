@@ -16,6 +16,11 @@
       "description": "Security skills for identifying, assessing, and remediating security risks"
     },
     {
+      "name": "pii-log-guard",
+      "source": "./plugins/pii-log-guard",
+      "description": "Blocks reading log exports and other data files outside git repos until they are redacted, plus redaction and shape tools"
+    },
+    {
       "name": "mattpocock-skills",
       "source": {
         "source": "git-subdir",

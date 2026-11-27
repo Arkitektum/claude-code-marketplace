@@ -1,0 +1,4 @@
+{
+  "name": "pii-log-guard",
+  "description": "Blocks reading log exports and other data files outside git repos until they are redacted, plus redaction and shape tools"
+}

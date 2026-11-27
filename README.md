@@ -33,6 +33,10 @@ Mandatory plugin applied to all Arkitektum projects. It does two things:
 
 OWASP knowledge bases (web, LLM, MCP, agentic, CI/CD, infrastructure) for reviewing and remediating security risks. See [its README](plugins/arkitektum-security/README.md).
 
+### pii-log-guard
+
+Keeps personal data in log exports out of Claude's context. A hook denies reading log exports and other data files outside git repositories until they have been redacted, and the plugin ships the tools to redact them or inspect their shape. Opt-in. See [its README](plugins/pii-log-guard/README.md).
+
 ### mattpocock-skills
 
 Selected skills from [mattpocock/skills](https://github.com/mattpocock/skills) (MIT): `grill-me`, `grilling`, `grill-with-docs`, `domain-modeling`, `setup-matt-pocock-skills`, `handoff`, `teach`, `wait-what` and `writing-for-agents`.
